@@ -1,15 +1,16 @@
 require 'spec_helper'
 
 # Specs in this file have access to a helper object that includes
-# the SevicesHelper. For example:
+# the ServicesHelper. For example:
 #
-# describe SevicesHelper do
+# describe ServicesHelper do
 #   describe "string concat" do
 #     it "concats two strings with spaces" do
 #       helper.concat_strings("this","that").should == "this that"
 #     end
 #   end
 # end
-describe SevicesHelper do
+describe ServicesHelper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+
