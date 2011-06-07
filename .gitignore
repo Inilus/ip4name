@@ -5,3 +5,7 @@ log/*.log
 tmp/
 shared/
 
+config/environments/development.rb
+config/initializers/secret_token.rb
+config/initializers/session_store.rb
+
