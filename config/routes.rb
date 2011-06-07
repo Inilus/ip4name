@@ -1,13 +1,15 @@
 Ip4name::Application.routes.draw do
 
+  # Static pages
+  match "/rules",   :to => "pages#rules"
+  match "/about",   :to => "pages#about"
+  match "/license", :to => "pages#license"
 
   # Omniauth pure
   match "/signin" => "services#signin"
   match "/signout" => "services#signout"
-
   match '/auth/:service/callback' => 'services#create'
   match '/auth/failure' => 'services#failure'
-
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'
@@ -17,6 +19,19 @@ Ip4name::Application.routes.draw do
       get 'failure'
     end
   end
+
+  # Users
+  resources :users do
+    collection do
+      get "setting"
+
+    end
+  end
+
+  # user's pages
+  match "/:user/:address" => "addresses#show"
+  resources :addresses, :only => [:index]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,7 +82,7 @@ Ip4name::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "pages#home"
 
   # See how all your routes lay out with "rake routes"
 
