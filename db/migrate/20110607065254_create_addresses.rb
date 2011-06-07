@@ -2,6 +2,7 @@ class CreateAddresses < ActiveRecord::Migration
   def self.up
     create_table :addresses do |t|
       t.string :name
+      t.string :value
       t.integer :user_id
       t.integer :domain_id
       t.integer :protocol_id
@@ -14,3 +15,4 @@ class CreateAddresses < ActiveRecord::Migration
     drop_table :addresses
   end
 end
+
