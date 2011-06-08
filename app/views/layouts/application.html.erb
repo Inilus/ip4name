@@ -12,18 +12,19 @@
 </head>
 <body>
   <div class="container">
-    <header>
-      <%= image_tag( "logo.png", :alt => "IP name", :class => "round" ) %>
-      <%= render "layouts/nav_links" %>
-    </header>
+
+    <%= render "shared/header" %>
+
+    <%= render "shared/description" %>
+
     <section class="round">
 
 <%= yield %>
 
     </section>
 
+
     <footer>
-      <%= render "layouts/nav_links" %>
     </footer>
 
   </div>

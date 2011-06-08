@@ -1,9 +1,9 @@
 Ip4name::Application.routes.draw do
 
   # Static pages
-  match "/rules",   :to => "pages#rules"
-  match "/about",   :to => "pages#about"
-  match "/license", :to => "pages#license"
+#  match "/rules",   :to => "pages#rules"
+#  match "/about",   :to => "pages#about"
+#  match "/license", :to => "pages#license"
 
   # Omniauth pure
   match "/signin" => "services#signin"
@@ -29,8 +29,8 @@ Ip4name::Application.routes.draw do
   end
 
   # user's pages
-  match "/:user/:address" => "addresses#show"
-  resources :addresses, :only => [:index]
+  match "/:user/$:link" => "addresses#show"
+  resources :addresses
 
 
   # The priority is based upon order of creation:
