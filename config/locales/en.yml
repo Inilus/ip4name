@@ -13,12 +13,14 @@ en:
   description:  "Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque. Lorem ipsum dolor sit amet, maiores ornare ac fermentum, imperdiet ut vivamus a, nam lectus at nunc. Quam euismod sem, semper ut potenti pellentesque quisque."
 
   # Home page
-  create_url:       "Create URL:"
-  here_is_your_url: "Here is your URL:"
-  generate_name:    "Generate name:"
-  tiny:             "tiny"
-  hugy:             "hugy"
-  or:               "or"
+  pages:
+    home:
+      create_url:       "Create URL:"
+      here_is_your_url: "Here is your URL:"
+      generate_name:    "Generate name:"
+      tiny:             "tiny"
+      hugy:             "hugy"
+      or:               "or"
 
 
   # Default
@@ -163,10 +165,12 @@ en:
     #
     label:
       link:
-        url:    "Link"
-        domain: "Domain"
-        name:   "Name"
-        tags:   "Tags"
+        url:        "Link"
+        domain:     "Domain"
+        name:       "Name"
+        tags:       "Tags"
+        private:    "private?"
+        statistic:  "statistic?"
 
 
   errors:

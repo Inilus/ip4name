@@ -1,36 +1,47 @@
-<%= form_for @address, :as => :link, :url => {:controller => :addresses ,:action => 'create'}  do |f| %>
+<%= form_for @address, :as => :link,
+    :url => {:controller => :addresses ,:action => 'create'}  do |f| %>
   <%= render "shared/div_null" %>
   <div class="context">
-    <h2><%= t :create_url %></h2>
-    <%= label :link, :url, :id => "url" %>
+    <h2><%= t ".create_url" %></h2>
+    <%= f.label :url, :class => "url" %>
     <%= f.url_field :url, :class => "url" %>
+    <div class="check" id="url_check"></div>
     <br />
 
-    <%= label :link, :domain, :id => "disable" %>
-    <%= f.text_field :domain, :class => "round" %>
+    <%= f.label :domain, :class => "disable" %>
+    <%= f.select :domain, @domains, {}, { :class => "round", :disabled => true } %>
+    <div class="check" id="domain_check">For registered users only</div>
     <br />
 
-    <span id="generator"><%= t :generate_name %>
-      <%= link_to t( :tiny ), "#" %>
-       <%= t :or %>
-      <%= link_to t( :hugy ), "#" %>
+    <span id="generator"><%= t ".generate_name" %>
+      <%= link_to t( ".tiny" ), "#" %> <%= t ".or" %> <%= link_to t( ".hugy" ), "#" %>
     </span>
     <br />
 
-    <%= label :link, :name, :id => "disable" %>
-    <%= f.text_field :name, :class => "round" %>
+    <%= f.label :name, :class => "disable" %>
+    <%= f.text_field :name, :class => "round", :disabled => true %>
     <br />
-    <%= label :link, :tags, :id => "disable" %>
-    <%= f.text_field :tags, :class => "round" %>
+    <%= f.label :tags, :class => "disable" %>
+    <%= f.text_field :tags, :class => "round", :disabled => true %>
+    <br />
+    <%= f.check_box :private, :class => "check_box_right", :disabled => true %>
+    <%= f.label :private, :class => "disable", :id => "chbox" %>
+    <br />
+    <%= f.check_box :statistic, :class => "check_box_right", :disabled => true %>
+    <%= f.label :statistic, :class => "disable", :id => "chbox" %>
     <br />
 
   </div>
   <%= render "shared/div_null" %>
   <div class="context">
-    <h2><%= t :here_is_your_url %></h2>
-    <table>
-
-    </table>
+    <h2><%= t ".here_is_your_url" %></h2>
+    <%= link_to "http://ip4name.com/anonym/s5gh3bvh3fhfdku3bna123sa",
+        "http://ip4name.com/anonym/s5gh3bvh3fhfdku3bna123sa",
+        :class => "result_url" %>
+    <br />
+    <%= f.submit :save, :class => "button_save" %>
+    <br />
+    <br />
   </div>
   <%= render "shared/div_null" %>
 <% end %>

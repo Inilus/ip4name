@@ -146,17 +146,37 @@ section.main div.context h2 {
 section.main form div.context label {
   float: left;
   width: 80px;
-  vertical-align: middle;
   color: #fff;
   font-size: 16px;
 }
 
-section.main form div.context label#url {
+section.main form div.context label.disable {
+  color: #999999;
+}
+
+section.main form div.context label.url {
   line-height: 32px;
 }
 
-section.main form div.context label#disable {
-  color: #999999;
+section.main form div.context label#chbox {
+  float: none;
+  font-weight: none;
+}
+
+section.main form div.context div.check {
+/*  display: none;*/
+  float: right;
+  margin-left: 20px;
+  width: 140px;
+  color: #ff8200;
+  font-size: 12px;
+  height: 20px;
+  padding-top: 4px;
+}
+
+section.main form div.context div#url_check.check {
+  padding-top: 8px;
+  height: 28px;
 }
 
 section.main form div.context input {
@@ -175,7 +195,19 @@ section.main form div.context input.url {
   border-radius:         8px;
 }
 
-section.main form div.context input.round {
+section.main form div.context select {
+  height: 26px;
+  margin: 0 0 12px;
+  padding: 1px 8px;
+  width: 518px;
+}
+
+section.main form div.context :disabled {
+  background-color: #999999;
+  color: #e5e5e5;
+}
+
+section.main form div.context .round {
   -moz-border-radius:    6px;
   -webkit-border-radius: 6px;
   border-radius:         6px;
@@ -190,8 +222,28 @@ section.main form div.context textarea {
   font-size: 16px;
 }
 
+section.main form div.context input.check_box_right {
+  margin: 0 5px 2px 85px;
+}
+
 section.main form div.context span#generator {
   margin: 0 0 12px 80px;
   color: #fff;
+}
+
+/* donw part */
+section.main form div.context a.result_url {
+  margin: 0 0 12px 40px;
+}
+
+section.main form div.context input.button_save {
+  padding: 3px 10px 3px 10px;
+  margin: 0;
+  width: 80px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1D8CC3;
 }
 
