@@ -4,7 +4,7 @@ db/*.sqlite3
 db/schema.rb
 log/*.log
 tmp/
-shared/
+/shared/
 
 config/environments/development.rb
 config/initializers/secret_token.rb
