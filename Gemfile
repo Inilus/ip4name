@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem "omniauth", "~> 0.2.6"
 
+gem 'jquery-rails', '>= 1.0.3'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

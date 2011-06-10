@@ -1,5 +1,22 @@
 Ip4name::Application.routes.draw do
 
+  #Tokens
+  resources :tokens do
+    collection do
+      get :create
+    end
+  end
+
+
+  # Links
+  resources :links do
+    collection do
+      get :create
+      get :index
+    end
+  end
+
+
   # Static pages
 #  match "/rules",   :to => "pages#rules"
 #  match "/about",   :to => "pages#about"
@@ -24,13 +41,12 @@ Ip4name::Application.routes.draw do
   resources :users do
     collection do
       get "setting"
-
     end
   end
 
   # user's pages
-  match "/:user/$:link" => "addresses#show"
-  resources :addresses
+#  match "/:user/$:link" => "addresses#show"
+#  resources :addresses
 
 
   # The priority is based upon order of creation:
@@ -82,7 +98,7 @@ Ip4name::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#home"
+  root :to => "links#index"
 
   # See how all your routes lay out with "rake routes"
 
