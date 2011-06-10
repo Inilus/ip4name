@@ -1,0 +1,4 @@
+class DomainsController < ApplicationController
+
+end
+

@@ -34,6 +34,17 @@ a:visited {
   color: #FFFF66;
 }
 
+/* Errors */
+label.error {
+  float: left;
+  background: none repeat scroll 0% 0% #900000;
+  padding: 4px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 750px;
+  display:none;
+}
+
 /* Header */
 header {
   margin-top: 10px;
@@ -144,10 +155,13 @@ section.main div.context h2 {
 }
 
 section.main form div.context label {
-  float: left;
-  width: 80px;
   color: #fff;
   font-size: 16px;
+}
+
+section.main form div.context label.link {
+  float: left;
+  width: 80px;
 }
 
 section.main form div.context label.disable {
@@ -232,7 +246,7 @@ section.main form div.context span#generator {
   color: #fff;
 }
 
-/* donw part */
+/* down part */
 section.main form div.context a.result_url {
   margin: 0 0 12px 40px;
 }

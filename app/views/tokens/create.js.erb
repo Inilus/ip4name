@@ -1,0 +1,4 @@
+$("select option:selected").each(function(){
+  update_link_token("<%= @token %>", "http://"+$(this).text())
+})
+

@@ -1,0 +1,53 @@
+<% if flash[:warning] %><%= flash[:warning] -%><% end %>
+
+<%= form_for @link,
+    :url => { :controller => :links, :action => "create" }  do |f| %>
+  <%= render "shared/div_null" %>
+  <div class="context">
+    <h2><%= t ".create_url" %></h2>
+
+    <%= f.label :url, :class => "url error", :generated => "true" %>
+    <%= f.label :url, :class => "link url" %>
+    <%= f.url_field :url, :class => "url" %>
+    <br />
+
+    <%= f.label :domain, :class => "link domain disable" %>
+    <%= f.select :domain, @domains, {}, { :class => "round", :disabled => true } %>
+    <div class="check" id="domain_check">For registered users only</div>
+    <br />
+
+    <span id="generator"><%= t ".generate_name" %>
+      <%= link_to t( ".tiny" ), tokens_path( "type" => "tiny" ),
+          :id => "link_tiny", :method => :post, :remote => true %>
+      <%= t ".or" %>
+      <%= link_to t( ".hugy" ), tokens_path( "type" => "hugy" ),
+          :id => "link_hugy", :method => :post, :remote => true %>
+    </span>
+    <br />
+
+    <%= f.label :token, :class => "link token disable" %>
+    <%= f.text_field :token, :class => "token round", :disabled => true %>
+    <br />
+    <%= f.label :tags, :class => "link tags disable" %>
+    <%= f.text_field :tags, :class => "tags round", :disabled => true, :value => "" %>
+    <br />
+    <%= f.check_box :private, :class => "private check_box_right", :disabled => true %>
+    <%= f.label :private, :class => "link private disable", :id => "chbox" %>
+    <br />
+    <%= f.check_box :statistic, :class => "statistic check_box_right", :disabled => true %>
+    <%= f.label :statistic, :class => "link statistic disable", :id => "chbox" %>
+    <br />
+
+  </div>
+  <%= render "shared/div_null" %>
+  <div class="context">
+    <h2><%= t ".here_is_your_url" %></h2>
+    <span id="result_url"></span>
+    <br />
+    <%= submit_tag :save, :class => "button_save" -%>
+    <br />
+    <br />
+  </div>
+  <%= render "shared/div_null" %>
+<% end %>
+
