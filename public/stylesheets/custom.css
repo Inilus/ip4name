@@ -167,7 +167,7 @@ section.main form div.context div.check {
 /*  display: none;*/
   float: right;
   margin-left: 20px;
-  width: 140px;
+  width: 135px;
   color: #ff8200;
   font-size: 12px;
   height: 20px;
@@ -224,6 +224,7 @@ section.main form div.context textarea {
 
 section.main form div.context input.check_box_right {
   margin: 0 5px 2px 85px;
+  width: 15px;
 }
 
 section.main form div.context span#generator {
