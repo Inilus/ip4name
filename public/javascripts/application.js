@@ -8,9 +8,6 @@ function update_link_token(nt,bu) {
 
 $().ready(function(){
 
-  // Validate form links#new
-  $("#new_link").validate({debug:true});
-
   // Generate new token if first visit links#index page
   $("#link_url").change(function(){
     if ($("#link_token").val()=="") {

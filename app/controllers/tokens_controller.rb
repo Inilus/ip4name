@@ -2,8 +2,8 @@ class TokensController < ApplicationController
 
 
   def create
-    @token_length = 2
-    @token_length = 2000 if params["type"] == "hugy"
+    @token_length = 3
+    @token_length = 200 if params["type"] == "hugy"
     @token = generate_token
     respond_to do |format|
       format.html # index.html.erb

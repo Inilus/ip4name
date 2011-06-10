@@ -3,7 +3,7 @@
 <%= form_for @link,
     :url => { :controller => :links, :action => "create" }  do |f| %>
   <%= render "shared/div_null" %>
-  <div class="context">
+  <div class="context ui-widget-content">
     <h2><%= t ".create_url" %></h2>
 
     <%= f.label :url, :class => "url error", :generated => "true" %>
@@ -13,7 +13,14 @@
 
     <%= f.label :domain, :class => "link domain disable" %>
     <%= f.select :domain, @domains, {}, { :class => "round", :disabled => true } %>
-    <div class="check" id="domain_check">For registered users only</div>
+    <div class="check ui-widget" id="domain_check">
+      <div style="padding: 0pt 0.7em;" class="ui-state-error ui-corner-all">
+        <p>
+          <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
+          For registered users only.
+        </p>
+      </div>
+    </div>
     <br />
 
     <span id="generator"><%= t ".generate_name" %>
@@ -30,6 +37,11 @@
     <br />
     <%= f.label :tags, :class => "link tags disable" %>
     <%= f.text_field :tags, :class => "tags round", :disabled => true, :value => "" %>
+    <a href="#">
+      <li title="Clear" class="ui-state-default ui-corner-all">
+        <span class="ui-icon ui-icon-trash"></span>
+      </li>
+    </a>
     <br />
     <%= f.check_box :private, :class => "private check_box_right", :disabled => true %>
     <%= f.label :private, :class => "link private disable", :id => "chbox" %>

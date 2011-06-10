@@ -7,8 +7,9 @@
   <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
   <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  <%= stylesheet_link_tag 'jquery-ui', :media => 'screen' %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "jquery.validate" %>
+  <%= javascript_include_tag "jquery-ui.min.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
