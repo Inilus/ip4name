@@ -1,18 +1,18 @@
 <% if flash[:warning] %><%= flash[:warning] -%><% end %>
 
 <%= form_for @link,
-    :url => { :controller => :links, :action => "create" }  do |f| %>
-  <%= render "shared/div_null" %>
-  <div class="context ui-widget-content">
-    <h2><%= t ".create_url" %></h2>
-
+    :url => { :controller => :links, :action => "create" } do |f| %>
+  <div class="ui-widget-header ui-corner-top">
+    <%= t ".create_url" %>
+  </div>
+  <div class="ui-widget-content">
     <%= f.label :url, :class => "url error", :generated => "true" %>
     <%= f.label :url, :class => "link url" %>
-    <%= f.url_field :url, :class => "url" %>
+    <%= f.url_field :url, :class => "url ui-corner-top ui-corner-bottom" %>
     <br />
 
     <%= f.label :domain, :class => "link domain disable" %>
-    <%= f.select :domain, @domains, {}, { :class => "round", :disabled => true } %>
+    <%= f.select :domain, @domains, {}, { :class => "round ui-state-disabled", :disabled => true } %>
     <div class="check ui-widget" id="domain_check">
       <div style="padding: 0pt 0.7em;" class="ui-state-error ui-corner-all">
         <p>
@@ -51,15 +51,18 @@
     <br />
 
   </div>
-  <%= render "shared/div_null" %>
-  <div class="context">
-    <h2><%= t ".here_is_your_url" %></h2>
+  <div class="ui-widget-header">
+    <%= t ".here_is_your_url" %>
+  </div>
+  <div class="ui-widget-content">
     <span id="result_url"></span>
     <br />
-    <%= submit_tag :save, :class => "button_save" -%>
+    <%= submit_tag :save, :class => "ui-button" -%>
     <br />
     <br />
   </div>
-  <%= render "shared/div_null" %>
+
+  <div class="ui-widget-header ui-corner-bottom" style="height: 40.5px;"></div>
+
 <% end %>
 
