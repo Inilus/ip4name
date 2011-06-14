@@ -15,8 +15,8 @@ en:
   # Home page
   links:
     index:
-      create_url:       "Create URL:"
-      here_is_your_url: "Here is your URL:"
+      create_url:       "Create URL"
+      here_is_your_url: "This is your URL"
       generate_name:    "Generate name "
       tiny:             "tiny"
       hugy:             "hugy"
