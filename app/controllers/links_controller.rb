@@ -13,7 +13,6 @@ class LinksController < ApplicationController
   end
 
     def create
-      p params[:link][:token]
 #    website_url = params.include?(:website_url) ? params[:website_url] : params[:link][:website_url]
 #    @link = Link.find_or_create_by_website_url( website_url )
 #    @link.ip_address = request.remote_ip if @link.new_record?

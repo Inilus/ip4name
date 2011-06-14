@@ -3,7 +3,11 @@
 
 function update_link_token(nt,bu) {
   $("#link_token").val(nt);
-  $("#result_url").html('<a href="'+bu+nt+'" class="result_url" id="link_result_url">'+bu+nt+'</a>');
+  var addr = bu+nt;
+  if (addr.length > 90) {
+    addr = addr.substring(0, 90) + "...";
+  }
+  $("#result_url").html('<a href="'+bu+nt+'" class="result_url" id="link_result_url">'+addr+'</a>');
 }
 
 $().ready(function(){

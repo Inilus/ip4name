@@ -6,60 +6,54 @@
     <%= t ".create_url" %>
   </div>
   <div class="ui-widget-content">
-    <%= f.label :url, :class => "url error", :generated => "true" %>
-    <%= f.label :url, :class => "link url" %>
-    <%= f.url_field :url, :class => "url ui-corner-top ui-corner-bottom" %>
-    <br />
-
-    <%= f.label :domain, :class => "link domain disable" %>
-    <%= f.select :domain, @domains, {}, { :class => "round ui-state-disabled", :disabled => true } %>
-    <div class="check ui-widget" id="domain_check">
-      <div style="padding: 0pt 0.7em;" class="ui-state-error ui-corner-all">
-        <p>
-          <span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
-          For registered users only.
-        </p>
+    <div class="link url">
+      <%= f.label :url, :class => "link url" %>
+      <%= f.url_field :url, :class => "url input ui-corner-all" %>
+    </div>
+    <div class="link" title="Only for signin users.">
+      <%= f.label :domain, :class => "link domain ui-state-disabled" %>
+      <%= f.select :domain, @domains, {}, { :class => "select ui-state-disabled ui-corner-all" } %>
+    </div>
+    <div class="link">
+      <span id="generator"><%= t ".generate_name" %>
+        <%= link_to t( ".tiny" ), tokens_path( "type" => "tiny" ),
+            :id => "link_tiny", :method => :post, :remote => true %>
+        <%= t ".or" %>
+        <%= link_to t( ".hugy" ), tokens_path( "type" => "hugy" ),
+            :id => "link_hugy", :method => :post, :remote => true %>
+      </span>
+    </div>
+    <div class="link" title="Only for signin users.">
+      <%= f.label :token, :class => "link token ui-state-disabled" %>
+      <%= f.text_field :token, :class => "token input ui-corner-all ui-state-disabled", :disabled => true %>
+    </div>
+    <div class="link" title="Only for signin users.">
+      <%= f.label :tags, :class => "link tags ui-state-disabled" %>
+      <%= f.text_field :tags, :class => "tags input ui-corner-all ui-state-disabled", :value => "", :disabled => true %>
+      <div title="Clear" class="ui-corner-all ui-state-default ui-state-disabled">
+        <a href="#" class="ui-icon ui-icon-trash"></a>
       </div>
     </div>
-    <br />
-
-    <span id="generator"><%= t ".generate_name" %>
-      <%= link_to t( ".tiny" ), tokens_path( "type" => "tiny" ),
-          :id => "link_tiny", :method => :post, :remote => true %>
-      <%= t ".or" %>
-      <%= link_to t( ".hugy" ), tokens_path( "type" => "hugy" ),
-          :id => "link_hugy", :method => :post, :remote => true %>
-    </span>
-    <br />
-
-    <%= f.label :token, :class => "link token disable" %>
-    <%= f.text_field :token, :class => "token round", :disabled => true %>
-    <br />
-    <%= f.label :tags, :class => "link tags disable" %>
-    <%= f.text_field :tags, :class => "tags round", :disabled => true, :value => "" %>
-    <a href="#">
-      <li title="Clear" class="ui-state-default ui-corner-all">
-        <span class="ui-icon ui-icon-trash"></span>
-      </li>
-    </a>
-    <br />
-    <%= f.check_box :private, :class => "private check_box_right", :disabled => true %>
-    <%= f.label :private, :class => "link private disable", :id => "chbox" %>
-    <br />
-    <%= f.check_box :statistic, :class => "statistic check_box_right", :disabled => true %>
-    <%= f.label :statistic, :class => "link statistic disable", :id => "chbox" %>
-    <br />
+    <div class="link" title="Only for signin users.">
+      <%= f.check_box :private, :class => "private check_box_right ui-corner-all", :disabled => true %>
+      <%= f.label :private, :class => "link private ui-state-disabled", :id => "chbox" %>
+    </div>
+    <div class="link" title="Only for signin users.">
+      <%= f.check_box :statistic, :class => "statistic check_box_right ui-corner-all", :disabled => true %>
+      <%= f.label :statistic, :class => "link statistic ui-state-disabled", :id => "chbox" %>
+    </div>
 
   </div>
   <div class="ui-widget-header">
     <%= t ".here_is_your_url" %>
   </div>
   <div class="ui-widget-content">
-    <span id="result_url"></span>
-    <br />
-    <%= submit_tag :save, :class => "ui-button" -%>
-    <br />
-    <br />
+    <div class="link result">
+      <span id="result_url"> </span>
+    </div>
+    <div class="link">
+      <%= submit_tag :save, :class => "save" -%>
+    </div>
   </div>
 
   <div class="ui-widget-header ui-corner-bottom" style="height: 40.5px;"></div>
